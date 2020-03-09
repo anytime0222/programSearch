@@ -12,7 +12,7 @@ for row in programData:
     todaysMenu = ('프로그램명 :'+ row['program_name'] + '\n시작시간 :' + row['program_start_time'] + '\n종료시간:' + row['program_end_time'])
 
 
-    print("텔레그램 메신저 전송")
+    print("--텔레그램 메신저 전송 시작--")
 
     teleurl = 'https://api.telegram.org/bot1105491661:AAEDkxKmYx9vzVP9ZA6JbtEejcrECqfnIIA/sendMessage'
 
