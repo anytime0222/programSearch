@@ -29,6 +29,18 @@ class DBHelper:
         if self.conn:
             self.conn.close()
 
+    def db_programListGetter(self):
+    
+        rows = None    
+        with self.conn.cursor() as cursor:
+            # Read a single record
+            sql = "SELECT	program_name,program_start_time,program_end_time,program_channel	FROM	program_list"
+            cursor.execute(sql)
+            rows = cursor.fetchall()
+            #print(rows)       
+       
+        return rows
+
     def db_insertCrawlingData(self, program_name,program_start_time,program_end_time,program_channel):
         with self.conn.cursor() as cursor:
             sql = '''
@@ -43,6 +55,6 @@ class DBHelper:
 #단독으로 수행시에만 작동함 > 테스트 코드 삽입하여 사용
 if __name__ =='__main__':
     db = DBHelper()
-    print(db.db_insertCrawlingData('1','2','3','4' ) )
+    #print(db.db_programListGetter())
 
     db.db_free()

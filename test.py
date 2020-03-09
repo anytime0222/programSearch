@@ -1,5 +1,7 @@
 import datetime
 
+import requests
+
 #############텍스트 포함 값 확인 
 
 # test_text1 = ['이산수 - 123123','삼겹살스 - 123545','돼지 - 453234','엉덩이 = 344']
@@ -39,3 +41,13 @@ b = sttime1 + datetime.timedelta(minutes=40)
 
 print(sttime1.time())
 print(b.time())
+
+
+
+print("asdf")
+
+teleurl = 'https://api.telegram.org/bot1105491661:AAEDkxKmYx9vzVP9ZA6JbtEejcrECqfnIIA/sendMessage'
+
+params = {'chat_id' : '1042377150', 'text' : '즐거운 성생활'}
+
+res = requests.get(teleurl,params=params)
